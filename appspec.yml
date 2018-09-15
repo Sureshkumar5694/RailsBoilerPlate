@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ec2-user/app
+hooks:
+  AfterInstall:
+    - location: deploy/AfterInstall.sh
+      runas: ec2-user
+  ApplicationStart:
+    - location: deploy/ApplicationStart.sh
+      runas: root
